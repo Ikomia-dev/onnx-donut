@@ -26,8 +26,7 @@ options.enable_mem_pattern = False
 # Instantiate ONNX predictor
 predictor = OnnxPredictor(export_folder=dst_folder, sess_options=options)
 
-# Write your prompt
-# Adapt it based on the model you use
+# Write your prompt accordingly to the model you use
 prompt = f"<s_docvqa><s_question>what is the title?</s_question><s_answer>"
 
 # Run prediction
