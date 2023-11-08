@@ -12,7 +12,7 @@ setup(name="onnx_donut",
           "timm==0.5.4",
           "donut-python==1.0.9",
           "onnx",
-          "onnxruntime"
-      ])
+          "onnxruntime",
           "protobuf<3.21.0"
       ],
+      python_requires='>=3.10.0')
