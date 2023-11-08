@@ -8,3 +8,4 @@ timm==0.5.4
 donut-python==1.0.9
 onnx
 onnxruntime
+protobuf<3.21.0
