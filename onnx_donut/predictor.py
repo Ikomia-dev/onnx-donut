@@ -1,15 +1,12 @@
 import onnxruntime
 import os
-import cv2
 from transformers import XLMRobertaTokenizerFast, MinLengthLogitsProcessor
-import torch
 import numpy as np
 from torchvision.transforms.functional import rotate, resize
 from PIL import Image, ImageOps
 
 from torchvision import transforms
 import re
-import time
 import json
 
 
@@ -98,7 +95,6 @@ class OnnxPredictor:
         out_encoder = self.encoder.run(None, {'pixel_values': encoder_input_ids})[0]
 
         past_key_values = None
-        decoder_output_names = None
         stop = False
 
         while not stop:
