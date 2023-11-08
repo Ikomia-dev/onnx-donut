@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onnx_donut"
+authors = [
+    {name = "Ambroise Berthe", email = "ambroise.berthe@ikomia.ai"},
+]
+description = "Export Donut model to onnx and run it with onnxruntime"
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["donut", "onnx"]
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+dependencies = [
+          "transformers >= 4.26.0, <=4.30.0",
+          "torch==1.13.1+cu116",
+          "torchvision==0.14.1+cu116",
+          "timm==0.5.4",
+          "donut-python==1.0.9",
+          "onnx",
+          "onnxruntime",
+          "protobuf<3.21.0"
+]
+dynamic = ["version"]
