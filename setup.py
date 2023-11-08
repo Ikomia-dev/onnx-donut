@@ -14,3 +14,5 @@ setup(name="onnx_donut",
           "onnx",
           "onnxruntime"
       ])
+          "protobuf<3.21.0"
+      ],
