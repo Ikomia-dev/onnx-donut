@@ -11,9 +11,11 @@ import json
 
 
 class OnnxPredictor:
-    def __init__(self, export_folder, sess_options=None, providers=None):
-        self.encoder = onnxruntime.InferenceSession(os.path.join(export_folder, 'encoder.onnx'), sess_options,
     def __init__(self, model_folder, sess_options=None, providers=None):
+        if sess_options is None:
+            # Avoid increase of memory usage between inferences
+            sess_options = onnxruntime.SessionOptions()
+            sess_options.enable_mem_pattern = False
         self.encoder = onnxruntime.InferenceSession(os.path.join(model_folder, 'encoder.onnx'), sess_options,
                                                     providers=providers)
 

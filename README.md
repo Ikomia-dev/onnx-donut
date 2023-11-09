@@ -45,7 +45,7 @@ options = onnxruntime.SessionOptions()
 options.enable_mem_pattern = False
 
 # Instantiate ONNX predictor
-predictor = OnnxPredictor(export_folder=onnx_folder, sess_options=options)
+predictor = OnnxPredictor(model_folder=onnx_folder, sess_options=options)
 
 # Write your prompt accordingly to the model you use
 prompt = f"<s_docvqa><s_question>what is the title?</s_question><s_answer>"
