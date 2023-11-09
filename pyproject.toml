@@ -9,7 +9,7 @@ authors = [
 ]
 description = "Export Donut model to onnx and run it with onnxruntime"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 keywords = ["donut", "onnx"]
 classifiers = [
     "Programming Language :: Python :: 3"
