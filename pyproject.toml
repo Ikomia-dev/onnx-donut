@@ -15,13 +15,14 @@ classifiers = [
     "Programming Language :: Python :: 3"
 ]
 dependencies = [
-          "transformers",
+          "transformers >= 4.26.0, <=4.35.0",
           "torch",
           "torchvision",
           "timm==0.5.4",
-          "donut-python",
+          "donut-python==1.0.9",
           "onnx",
           "onnxruntime",
+          "protobuf<3.21.0"
 ]
 dynamic = ["version"]
 
