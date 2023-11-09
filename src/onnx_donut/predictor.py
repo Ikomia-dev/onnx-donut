@@ -13,16 +13,18 @@ import json
 class OnnxPredictor:
     def __init__(self, export_folder, sess_options=None, providers=None):
         self.encoder = onnxruntime.InferenceSession(os.path.join(export_folder, 'encoder.onnx'), sess_options,
+    def __init__(self, model_folder, sess_options=None, providers=None):
+        self.encoder = onnxruntime.InferenceSession(os.path.join(model_folder, 'encoder.onnx'), sess_options,
                                                     providers=providers)
 
-        self.decoder = onnxruntime.InferenceSession(os.path.join(export_folder, 'decoder.onnx'), sess_options,
+        self.decoder = onnxruntime.InferenceSession(os.path.join(model_folder, 'decoder.onnx'), sess_options,
                                                     providers=providers)
 
-        self.decoder_with_past = onnxruntime.InferenceSession(os.path.join(export_folder, 'decoder_with_past.onnx'),
+        self.decoder_with_past = onnxruntime.InferenceSession(os.path.join(model_folder, 'decoder_with_past.onnx'),
                                                               sess_options, providers=providers)
-        self.tokenizer = XLMRobertaTokenizerFast.from_pretrained(export_folder)
+        self.tokenizer = XLMRobertaTokenizerFast.from_pretrained(model_folder)
 
-        with open(os.path.join(export_folder, "config.json"), 'r') as f:
+        with open(os.path.join(model_folder, "config.json"), 'r') as f:
             config = json.load(f)
 
         self.image_size = config['input_size']
