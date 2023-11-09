@@ -69,9 +69,6 @@ class OnnxPredictor:
         )
         return np.array(self.to_tensor(ImageOps.expand(img, padding)))[None, :]
 
-    def id2id(self, x):
-        return x // 2 * 4 + x % 2
-
     def generate(self, img, prompt, max_length=None):
         if max_length is None:
             max_length = self.max_length
