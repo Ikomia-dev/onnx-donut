@@ -16,7 +16,7 @@ classifiers = [
 ]
 dependencies = [
           "transformers >= 4.26.0, <=4.30.0",
-          "torch==1.13.1+cu116",
+          "torch>=1.13.1",
           "torchvision==0.14.1+cu116",
           "timm==0.5.4",
           "donut-python==1.0.9",
