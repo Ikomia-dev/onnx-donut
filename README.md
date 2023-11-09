@@ -29,7 +29,6 @@ export_onnx(model_path, dst_folder, opset_version=16)
 from onnx_donut.predictor import OnnxPredictor
 import numpy as np
 from PIL import Image
-import onnxruntime
 
 # Image path to run on
 img_path = "/path/to/your/image.png"
@@ -39,10 +38,6 @@ onnx_folder = "converted_donut"
 
 # Read image
 img = np.array(Image.open(img_path).convert('RGB'))
-
-# Avoid increase of memory usage between inferences
-options = onnxruntime.SessionOptions()
-options.enable_mem_pattern = False
 
 # Instantiate ONNX predictor
 predictor = OnnxPredictor(model_folder=onnx_folder, sess_options=options)
