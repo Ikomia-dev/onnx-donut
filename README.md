@@ -38,7 +38,7 @@ img_path = "/path/to/your/image.png"
 onnx_folder = "converted_donut"
 
 # Read image
-img = np.array(Image.open(img_path))
+img = np.array(Image.open(img_path).convert('RGB'))
 
 # Avoid increase of memory usage between inferences
 options = onnxruntime.SessionOptions()
