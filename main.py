@@ -17,7 +17,7 @@ dst_folder = "converted_donut"
 export_onnx(model_path, dst_folder, opset_version=16)
 
 # Read image
-img = np.array(Image.open(img_path))
+img = np.array(Image.open(img_path).convert('RGB'))
 
 # Avoid increase of memory usage between inferences
 options = onnxruntime.SessionOptions()
