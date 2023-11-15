@@ -15,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3"
 ]
 dependencies = [
-          "transformers >= 4.26.0, <=4.35.0",
+          "transformers >= 4.25.1, <=4.35.0",
           "torch < 3.0.0",
           "torchvision < 1.0.0",
           "timm==0.5.4",
