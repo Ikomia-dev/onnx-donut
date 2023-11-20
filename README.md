@@ -12,6 +12,7 @@ pip install onnx-donut
 
 ```python
 from onnx_donut.exporter import export_onnx
+from onnx_donut.quantizer import quantize
 
 # Hugging Face model card or folder
 model_path = "naver-clova-ix/donut-base-finetuned-docvqa"
@@ -21,6 +22,10 @@ dst_folder = "converted_donut"
 
 # Export from Pytorch to ONNX
 export_onnx(model_path, dst_folder, opset_version=16)
+
+# Quantize your model to int8
+quantize(dst_folder, dst_folder + "_quant")
+
 ```
 
 ## Model inference with onnxruntime

@@ -1,5 +1,6 @@
 from onnx_donut.exporter import export_onnx
 from onnx_donut.predictor import OnnxPredictor
+from onnx_donut.quantizer import quantize
 import numpy as np
 from PIL import Image
 
@@ -14,6 +15,9 @@ dst_folder = "converted_donut"
 
 # Export from Pytorch to ONNX
 export_onnx(model_path, dst_folder, opset_version=16)
+
+# Quantize your model to int8
+quantize(dst_folder, dst_folder)
 
 # Read image
 img = np.array(Image.open(img_path).convert('RGB'))
