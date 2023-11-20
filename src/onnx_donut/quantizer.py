@@ -16,7 +16,7 @@ def quantize(src_folder, dst_folder=None):
     if dst_folder is None:
         dst_folder = src_folder + "_quant"
 
-    shutil.copytree(dst_folder, dst_folder, dirs_exist_ok=True)
+    shutil.copytree(src_folder, dst_folder, dirs_exist_ok=True)
 
     for file in ["encoder", "decoder", "decoder_with_past"]:
         print("Quantizing "+file+"...")
