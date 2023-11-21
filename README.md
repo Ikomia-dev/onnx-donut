@@ -45,7 +45,7 @@ onnx_folder = "converted_donut"
 img = np.array(Image.open(img_path).convert('RGB'))
 
 # Instantiate ONNX predictor
-predictor = OnnxPredictor(model_folder=onnx_folder, sess_options=options)
+predictor = OnnxPredictor(model_folder=onnx_folder)
 
 # Write your prompt accordingly to the model you use
 prompt = f"<s_docvqa><s_question>what is the title?</s_question><s_answer>"
